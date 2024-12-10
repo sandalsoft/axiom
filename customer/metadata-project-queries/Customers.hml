@@ -177,24 +177,6 @@ definition:
         rootField: customersAggregate
   aggregateExpression: CustomersAggExp
 
----
-kind: ModelPermissions
-version: v1
-definition:
-  modelName: Customers
-  permissions:
-    - role: admin
-      select:
-        filter: null
-        allowSubscriptions: true
-    - role: customer
-      select:
-        filter:
-          fieldComparison:
-            field: customerId
-            operator: _eq
-            value:
-              sessionVariable: x-hasura-user-id
 
 ---
 kind: Relationship
