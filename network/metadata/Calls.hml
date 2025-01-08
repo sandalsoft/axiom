@@ -1,3 +1,29 @@
+
+
+
+
+
+
+
+
+# ---
+# kind: Relationship
+# version: v1
+# definition:
+#   name: _customer
+#   sourceType: Calls
+#   target:
+#     model:
+#       name: Customers
+#       relationshipType: Object
+#   mapping:
+#     - source:
+#         fieldPath:
+#           - fieldName: customerid
+#       target:
+#         modelField:
+#           - fieldName: customerId
+
 ---
 kind: ObjectType
 version: v1

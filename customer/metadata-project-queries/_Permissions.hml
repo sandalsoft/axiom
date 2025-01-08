@@ -17,4 +17,25 @@ definition:
             value:
               sessionVariable: x-hasura-user-id
 
-
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Billing
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - billingDate
+          - billingId
+          - customerId
+          - paymentStatus
+          - totalAmount
+    - role: customer
+      output:
+        allowedFields:
+          - billingDate
+          - billingId
+          - customerId
+          - paymentStatus
+          - totalAmount

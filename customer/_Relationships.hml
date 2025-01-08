@@ -1,0 +1,46 @@
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: formatBillingDate
+  sourceType: Billing
+  target:
+    command:
+      name: ToDateString
+      subgraph: globals
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: billingDate
+      target:
+        argument:
+          argumentName: date
+
+
+
+
+
+
+
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: calls
+  sourceType: Customers
+  target:
+    model:
+      name: Calls
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: customerId
+      target:
+        modelField:
+          - fieldName: customerId
+
+
+

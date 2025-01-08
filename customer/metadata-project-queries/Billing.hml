@@ -37,28 +37,6 @@ definition:
           column:
             name: total_amount
 
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: Billing
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - billingDate
-          - billingId
-          - customerId
-          - paymentStatus
-          - totalAmount
-    - role: customer
-      output:
-        allowedFields:
-          - billingDate
-          - billingId
-          - customerId
-          - paymentStatus
-          - totalAmount
 
 ---
 kind: Model
