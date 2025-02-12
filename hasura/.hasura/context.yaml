@@ -1,7 +1,13 @@
 kind: Context
 version: v3
 definition:
+<<<<<<< HEAD
   current: axiom-dev
+||||||| parent of 6e4c7b7 (Added finserv data and demo environment on Hasura Cloud)
+  current: default
+=======
+  current: axiom-finserv
+>>>>>>> 6e4c7b7 (Added finserv data and demo environment on Hasura Cloud)
   contexts:
     au:
       project: axiom-au
@@ -9,10 +15,26 @@ definition:
       subgraph: ../customer/subgraph.yaml
       localEnvFile: ../.env.telco
       cloudEnvFile: ../.env.cloud.au
+<<<<<<< HEAD
     axiom-dev:
       project: axiom-dev
       localEnvFile: ../.env.telco
       cloudEnvFile: ../.env.cloud.dev
+||||||| parent of 6e4c7b7 (Added finserv data and demo environment on Hasura Cloud)
+    axiom-fsi:
+      project: axiom-fsi
+      localEnvFile: ../.env.fsi
+      cloudEnvFile: ../.env.cloud.fsi
+=======
+    axiom-finserv:
+      project: axiom-finserv
+      localEnvFile: ../.env.finserv
+      cloudEnvFile: ../.env.cloud.finserv
+    axiom-fsi:
+      project: axiom-fsi
+      localEnvFile: ../.env.fsi
+      cloudEnvFile: ../.env.cloud.fsi
+>>>>>>> 6e4c7b7 (Added finserv data and demo environment on Hasura Cloud)
     axiom-starter:
       project: axiom-starter
       supergraph: ../supergraph-config/starter/2-supergraph.yaml
@@ -77,3 +99,5 @@ definition:
     docker-stop:
       bash: for file in compose*.yaml $(find ../.data -type f -name "compose.yaml"); do docker compose -f $file down -v; done
       powershell: docker compose -f compose.yaml down -v; docker compose -f .data/compose.yaml down -v
+    build-finserv:
+      bash: ddn supergraph build local --env-file .env.finserv --env-file .env --supergraph supergraph-config/finserv/1-supergraph.yaml
